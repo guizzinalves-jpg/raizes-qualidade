@@ -1,0 +1,82 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/proj
+configfile: pytest.ini
+testpaths: tests
+plugins: platformdirs-4.13.0, cov-7.1.0
+collecting ... collected 55 items
+
+tests/test_integration.py::test_CT_I01_pagamento_aprovado_baixa_estoque_e_pontua PASSED
+tests/test_integration.py::test_CT_I02_pagamento_recusado_libera_reserva PASSED
+tests/test_integration.py::test_CT_I03_timeout_gera_pendente_e_mantem_reserva PASSED
+tests/test_integration.py::test_CT_I04_conciliacao_resolve_pendente PASSED
+tests/test_integration.py::test_CT_I05_gateway_instavel_retry_com_sucesso PASSED
+tests/test_integration.py::test_CT_I06_gateway_indisponivel_falha_controlada PASSED
+tests/test_integration.py::test_CT_I07_idempotencia_nao_duplica_pedido_nem_cobranca PASSED
+tests/test_integration.py::test_CT_I08_auditoria_com_correlation_id_em_todo_fluxo PASSED
+tests/test_integration.py::test_CT_I09_cancelamento_exige_ator_e_motivo_e_audita PASSED
+tests/test_integration.py::test_CT_I10_cancelar_pedido_pago_negado PASSED
+tests/test_integration.py::test_CT_I11_consentimento_ausente_nao_acumula_pontos PASSED
+tests/test_integration.py::test_CT_I12_conciliar_pedido_nao_pendente PASSED
+tests/test_integration.py::test_CT_I13_cancelar_pedido_inexistente PASSED
+tests/test_integration.py::test_CT_I14_gateway_mock_consulta_referencia_desconhecida PASSED
+tests/test_security_perf_regression.py::test_CT_SEC01_log_de_auditoria_nao_contem_dados_pessoais PASSED
+tests/test_security_perf_regression.py::test_CT_SEC02_resposta_da_api_nao_expoe_token_nem_dados_de_cartao PASSED
+tests/test_security_perf_regression.py::test_CT_SEC03_sem_consentimento_nenhum_ponto_e_registrado PASSED
+tests/test_security_perf_regression.py::test_CT_SEC04_entrada_maliciosa_nao_quebra_servico PASSED
+tests/test_security_perf_regression.py::test_CT_P01_microbenchmark_500_pedidos_p95_abaixo_de_50ms 
+[CT-P01] n=500  media=0.073 ms  p95=0.110 ms  max=0.754 ms
+PASSED
+tests/test_security_perf_regression.py::test_CT_R01_regressao_fluxo_critico_completo PASSED
+tests/test_system_api.py::test_CT_S01_app_pedido_pago_201 PASSED
+tests/test_system_api.py::test_CT_S02_multicanal_todos_os_canais_concluem[TOTEM-None] PASSED
+tests/test_system_api.py::test_CT_S02_multicanal_todos_os_canais_concluem[BALCAO-None] PASSED
+tests/test_system_api.py::test_CT_S02_multicanal_todos_os_canais_concluem[WEB-C1] PASSED
+tests/test_system_api.py::test_CT_S02_multicanal_todos_os_canais_concluem[PICKUP-C1] PASSED
+tests/test_system_api.py::test_CT_S03_app_sem_login_422 PASSED
+tests/test_system_api.py::test_CT_S04_carrinho_vazio_422 PASSED
+tests/test_system_api.py::test_CT_S05_quantidade_acima_do_limite_422 PASSED
+tests/test_system_api.py::test_CT_S06_item_inexistente_na_unidade_reduzida_422 PASSED
+tests/test_system_api.py::test_CT_S07_produto_sazonal_fora_de_epoca_422 PASSED
+tests/test_system_api.py::test_CT_S08_produto_sazonal_em_epoca_junina_201 PASSED
+tests/test_system_api.py::test_CT_S09_estoque_insuficiente_422 PASSED
+tests/test_system_api.py::test_CT_S10_pagamento_recusado_402 PASSED
+tests/test_system_api.py::test_CT_S11_timeout_do_gateway_202_pendente PASSED
+tests/test_system_api.py::test_CT_S12_gateway_fora_do_ar_503 PASSED
+tests/test_system_api.py::test_CT_S13_sem_idempotency_key_400 PASSED
+tests/test_system_api.py::test_CT_S14_canal_invalido_400 PASSED
+tests/test_system_api.py::test_CT_S15_unidade_invalida_e_pagamento_nao_informado PASSED
+tests/test_unit_domain.py::test_CT_U01_subtotal_e_total PASSED
+tests/test_unit_domain.py::test_CT_U02_quantidade_valida_limites[1] PASSED
+tests/test_unit_domain.py::test_CT_U02_quantidade_valida_limites[10] PASSED
+tests/test_unit_domain.py::test_CT_U02_quantidade_valida_limites[20] PASSED
+tests/test_unit_domain.py::test_CT_U03_quantidade_invalida[0] PASSED
+tests/test_unit_domain.py::test_CT_U03_quantidade_invalida[-1] PASSED
+tests/test_unit_domain.py::test_CT_U03_quantidade_invalida[21] PASSED
+tests/test_unit_domain.py::test_CT_U03_quantidade_invalida[1.5] PASSED
+tests/test_unit_domain.py::test_CT_U03_quantidade_invalida[None] PASSED
+tests/test_unit_domain.py::test_CT_U04_pontos_fidelidade[0-0] PASSED
+tests/test_unit_domain.py::test_CT_U04_pontos_fidelidade[99-0] PASSED
+tests/test_unit_domain.py::test_CT_U04_pontos_fidelidade[100-1] PASSED
+tests/test_unit_domain.py::test_CT_U04_pontos_fidelidade[4299-42] PASSED
+tests/test_unit_domain.py::test_CT_U04_pontos_fidelidade[10000-100] PASSED
+tests/test_unit_domain.py::test_CT_U05_produto_sazonal_janela PASSED
+tests/test_unit_domain.py::test_CT_U06_produto_regular_sempre_disponivel PASSED
+tests/test_unit_domain.py::test_CT_U07_mascara_dados_pessoais_em_log PASSED
+
+------------- generated xml file: /home/claude/proj/out/junit.xml --------------
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Name                           Stmts   Miss Branch BrPart  Cover   Missing
+--------------------------------------------------------------------------
+src/raizes/__init__.py             0      0      0      0   100%
+src/raizes/api.py                 13      0      2      0   100%
+src/raizes/application.py         95      0     38      1    99%   112->114
+src/raizes/domain.py              63      0      4      0   100%
+src/raizes/infrastructure.py      54      1     24      1    97%   75
+src/raizes/ports.py               13      0      0      0   100%
+--------------------------------------------------------------------------
+TOTAL                            238      1     68      2    99%
+============================== 55 passed in 0.32s ==============================

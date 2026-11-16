@@ -1,0 +1,74 @@
+[
+ [
+  "M01",
+  "Pontos: 1 por R$ 1 → 1 por R$ 0,10",
+  "MORTO",
+  "test_CT_I01_pagamento_aprovado_baixa_estoque_e_pontua"
+ ],
+ [
+  "M02",
+  "Limite de quantidade 20 → 21",
+  "MORTO",
+  "test_CT_S05_quantidade_acima_do_limite_422"
+ ],
+ [
+  "M03",
+  "Fim da janela sazonal exclusivo",
+  "MORTO",
+  "test_CT_U05_produto_sazonal_janela"
+ ],
+ [
+  "M04",
+  "Remove idempotência (RN05)",
+  "MORTO",
+  "test_CT_I07_idempotencia_nao_duplica_pedido_nem_cobranca"
+ ],
+ [
+  "M05",
+  "Pontua sem consentimento (LGPD)",
+  "MORTO",
+  "test_CT_I11_consentimento_ausente_nao_acumula_pontos"
+ ],
+ [
+  "M06",
+  "Não libera estoque na recusa",
+  "MORTO",
+  "test_CT_I02_pagamento_recusado_libera_reserva"
+ ],
+ [
+  "M07",
+  "Sem retentativa no gateway",
+  "MORTO",
+  "test_CT_I05_gateway_instavel_retry_com_sucesso"
+ ],
+ [
+  "M08",
+  "Permite cancelar pedido pago",
+  "MORTO",
+  "test_CT_I10_cancelar_pedido_pago_negado"
+ ],
+ [
+  "M09",
+  "Desativa mascaramento de e-mail",
+  "MORTO",
+  "test_CT_SEC01_log_de_auditoria_nao_contem_dados_pessoais"
+ ],
+ [
+  "M10",
+  "HTTP do timeout 202 → 200",
+  "MORTO",
+  "test_CT_S11_timeout_do_gateway_202_pendente"
+ ],
+ [
+  "M11",
+  "Não exige login nos canais APP/WEB/PICKUP",
+  "MORTO",
+  "test_CT_S03_app_sem_login_422"
+ ],
+ [
+  "M12",
+  "Ignora verificação de estoque",
+  "MORTO",
+  "test_CT_S09_estoque_insuficiente_422"
+ ]
+]
